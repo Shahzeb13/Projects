@@ -1,0 +1,234 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 
+  "montserrat-medium",  Roboto , "poppins ";
+    
+}
+
+
+html   body {
+    height:100%;
+    width:100%;
+/* background-image: url(https://images.unsplash.com/photo-1524116458090-9521cd04f38d?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);   */
+    background-image : url(Images/bg3.jpg);
+background-size: cover;
+}
+
+
+.main{
+    height: 100%;
+    width:100%;
+    
+
+}
+
+
+
+.navbar{
+    width:100%;
+    height:70px;
+    
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 50px 35px;
+    position: fixed;
+    top:0;
+    left:0;
+
+
+}
+.navbar img{
+    width:80px;
+    height:26px;
+    
+}
+
+.navbar h3{
+    /* color:green;
+    font-size: small;
+    letter-spacing:3px; */
+    display: flex;  /* Makes "MENU" and icon behave as flex items */
+    align-items: center; /* Aligns them vertically */
+    gap: 10px;  /* Adds space between "MENU" and the icon */
+    color: green;
+    font-size: small;
+    letter-spacing: 3px;
+     
+}
+
+
+.navbar i {
+    color:white;
+    font-size:30px;
+    
+}
+
+.intro{
+    
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items: center;
+    margin-top:100px;
+    margin-left:100px;
+    margin-right:70px
+    
+}
+
+.intro h3{
+    color:rgba(255, 255, 255, 0.5);
+    letter-spacing: 6px;
+}
+
+.intro h2{
+    color: white;
+    font-weight: 500;
+    font-size:68px;
+    line-height: 76px;
+
+
+}
+
+
+.aside{
+    color:white;
+    display:flex;
+    flex-direction: column;
+    gap:17px
+    
+}
+
+.aside i{
+    border:2px solid #eee;
+    
+    padding:8px;
+    border-radius:20px;
+    
+}
+
+
+.links{
+    
+    margin-top: 5%;
+    padding:10px;
+    display:flex;
+    gap:20px;
+    margin-left: 8%;
+
+}
+
+
+.links a{
+    color:white;
+    text-decoration: none;
+    border:2px solid white;
+    padding:14px 33px;
+    font-weight:500;
+    font-size:14px
+    
+}
+
+
+.scrolldown {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    gap: 10px; /* Adds space between the arrow and text */
+    padding-right: 80px;
+    letter-spacing: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top:10px;
+    margin-bottom:35px;
+    
+}
+
+/* Target the arrow icon */
+.scrolldown i {
+    color: green; /* Changes arrow color to green */
+    font-size: 24px; /* Adjust size if needed */
+}
+
+
+
+.about{
+    width:100%;
+    background-color: rgb(57, 181, 74);
+    
+    display:flex;
+    flex-direction : column;
+    align-items:center;
+
+    padding:100px 200px;
+    
+}
+
+.about1{
+    margin-bottom:50px;
+    padding-bottom:30px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.301);
+}
+.about1 h3{
+    font-size:18px;
+    letter-spacing: 3px;
+    text-align: center;
+    
+}
+.about1 h1{
+    font-size:100px;
+    color:white;
+
+    
+}
+
+
+
+
+.about2{
+    margin-bottom:60px
+}
+.about2 p{
+    font-size:22px;
+    font-weight: 400;
+    line-height: 38px;
+}
+
+
+.about3{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:stretch;
+    
+    
+    
+}
+
+.stats{
+   border-right: 1px solid rgba(255, 255, 255, 0.438);
+   padding-right:50px;
+   padding-left:50px;
+}
+
+.stats:last-child {
+    border-right: none;
+  }
+  
+
+.stats h1{
+    font-size: 80px;
+    color:white;
+
+}
+
+
+.stats h3{
+    text-align: center;
+    white-space:nowrap;
+}
