@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link 
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+      rel="stylesheet" 
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+      crossorigin="anonymous"
+    >
+    <title>KDS</title>
+    <style>
+      .desc {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        font-size: 0.9rem;
+        border-radius: 0;
+      }
+
+      .nav-wrapper {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-card {
+        transition: transform 0.3s ease;
+      }
+
+      .header-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card-img-top {
+        border-radius: 0.5rem 0.5rem 0 0;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .pop-card-img {
+        width: 150px;
+        height: 100px;
+        object-fit: cover;
+      }
+
+      .footer {
+        background-color: #f1f1f1;
+        margin-top: 5rem;
+      }
+
+      @media (max-width: 768px) {
+        .nav-icons {
+          display: none;
+        }
+        
+        .pop-card-img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top nav-wrapper">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="Images/cdnlogo.com_ign.svg" alt="IGN" width="30" class="me-2">
+          <h2 class="mb-0"><span class="text-danger">KDS</span></h2>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto nav-icons">
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="index.html"><i class="ri-home-5-line fs-5"></i></a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="Review.html"><i class="ri-store-2-line fs-5"></i></a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="v.html"><i class="ri-file-video-line fs-5"></i></a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#"><i class="ri-news-line fs-5"></i></a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="previews.html"><i class="ri-presentation-line fs-5"></i></a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#"><i class="ri-cup-line fs-5"></i></a>
+            </li>
+          </ul>
+
+          <form class="d-flex ms-auto">
+            <input class="form-control me-2 rounded-pill" type="search" placeholder="Search">
+            <button class="btn btn-outline-danger rounded-pill" type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mt-5 pt-5">
+      <!-- Header Section -->
+      <div class="row g-4 mt-5">
+        <div class="col-lg-3 col-md-6 col-12">
+          <div class="card h-100 header-card">
+            <a href="#" class="position-relative">
+              <img 
+                src="Images/thunderbolts-new-footage-revealed-the-sad-outcome-of-buckys_xmh8.800.webp" 
+                class="card-img-top"
+                alt="Thunderbolts"
+              >
+              <div class="desc">Thunderbolts: New Footage Revealed the Sad Outcome of Bucky’s Political Career</div>
+            </a>
+          </div>
+        </div>
+        <!-- Repeat similar columns for other header cards -->
+      </div>
+
+      <!-- Spotlight Section -->
+      <section class="mt-5">
+        <h2 class="mb-4"><strong>Spotlight</strong></h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <img 
+                src="https://sm.ign.com/t/ign_pk/news/d/disney-and/disney-and-marvel-at-cinemacon-2025-the-biggest-moments_1uzc.320.jpg" 
+                class="card-img-top"
+                alt="Disney"
+              >
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a href="#" class="text-dark text-decoration-none">Disney and Marvel at CinemaCon 2025: The Biggest Moments</a>
+                </h5>
+              </div>
+            </div>
+          </div>
+          <!-- Repeat similar card columns -->
+        </div>
+      </section>
+
+      <!-- Popular Content -->
+      <section class="mt-5">
+        <h2 class="mb-4"><strong>Popular Content</strong></h2>
+        <div class="list-group">
+          <div class="list-group-item border-0">
+            <div class="row g-3">
+              <div class="col-md-2">
+                <img 
+                  src="Images/popular/first-predator-badlands-trailer-shown-at-cinemacon_uan4.280.webp" 
+                  class="pop-card-img rounded"
+                  alt="Predator"
+                >
+              </div>
+              <div class="col-md-10">
+                <small class="text-danger">2 days, 13 hours Comment on this article!</small>
+                <h5>First Predator: Badlands Trailer Shown at CinemaCon</h5>
+                <p>What if the Predator was... a good guy?</p>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <!-- Repeat similar items -->
+        </div>
+      </section>
+
+      <!-- Latest Section -->
+      <section class="mt-5">
+        <h2 class="mb-4"><strong>Latest</strong></h2>
+        <div class="list-group">
+          <div class="list-group-item border-0">
+            <div class="row g-3">
+              <div class="col-md-2">
+                <img 
+                  src="Images/popular/nintendo-switch-2-direct-7-biggest-surprises_yzvv.280.webp" 
+                  class="pop-card-img rounded"
+                  alt="Nintendo"
+                >
+              </div>
+              <div class="col-md-10">
+                <small class="text-danger">1 day, 5 hours Ago</small>
+                <h5>Top Surprises from the Nintendo Switch 2 Direct</h5>
+                <p>What new features are coming to the Nintendo Switch 2?</p>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <!-- Repeat similar items -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer py-4 mt-5">
+      <div class="container text-center">
+        <p class="mb-1">&copy; 2025 My Website. All rights reserved.</p>
+        <p class="mb-0">
+          Follow us on: 
+          <a href="#" class="text-danger text-decoration-none">Facebook</a> |
+          <a href="#" class="text-danger text-decoration-none">LinkedIn</a> |
+          <a href="#" class="text-danger text-decoration-none">Instagram</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script 
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+      crossorigin="anonymous">
+    </script>
+  </body>
+</html>

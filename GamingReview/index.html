@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+   
+    <title>KDS</title>
+    <style>
+     
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "poppins", Roboto;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+
+      hr {
+        border: none;
+        border-top: 0.1px solid #ccc;
+        width: 95%;
+      }
+
+      .header {
+        padding: 1rem;
+        width: 90%;
+        height: 70%;
+        margin: 10rem auto 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .header a {
+        width: 20%;
+        border-radius: 1rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .header img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+      }
+      .desc {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 30%;
+        padding: 0.5rem;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-size: 0.9rem;
+        font-weight: bold;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+      }
+
+      .card-div {
+        margin-top: 7rem;
+        border: none;
+      }
+      .card-div h2 {
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+      }
+      .cards {
+        display: flex;
+        flex-direction: row;
+        padding: 1rem;
+        gap: 1rem;
+        width: 100%;
+        border-radius: 1rem;
+      }
+
+      .card {
+        width: 80%;
+        height: 100%;
+      }
+
+      .card a {
+        color: black;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      .card img {
+        width: 90%;
+        height: 100%;
+        border-radius: 0.5rem;
+      }
+
+      .nav {
+        height: 15%;
+        display: flex;
+        padding-left: 6rem;
+        padding-right: 4rem;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+        padding: 1rem;
+        width: 25%;
+      }
+      .nav i {
+        width: 3rem;
+        color: black;
+        text-decoration: none;
+        list-style-type: none;
+        font-size: 1.7rem;
+      }
+      .nav img {
+        width: 2rem;
+      }
+      .nav a {
+        text-decoration: none;
+      }
+
+      .nav input {
+        border: 1px solid #ccc;
+        outline: none;
+        padding: 8px 16px;
+        border-radius: 1.5rem;
+        font-weight: 600;
+        font-size: 1rem;
+        width: 40%;
+        background-color: #f9f9f9;
+        transition: all 0.3s ease;
+      }
+
+      .nav input:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        background-color: #fff;
+      }
+
+      .nav button {
+        padding: 5px 20px;
+        border: none;
+        border-radius: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+      }
+
+      .nav div {
+        display: flex;
+      }
+
+      main {
+        width: 90%;
+        margin: 5rem auto 0 auto;
+      }
+
+      .Popcontent {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 7rem;
+        cursor: pointer;
+      }
+      .Popcontent h2 {
+        margin-left: 1rem;
+      }
+      .popCard {
+        display: flex;
+        border-radius: 5px;
+        margin-left: 1rem;
+        gap: 1rem;
+      }
+
+      .popCard img {
+        width: 20%;
+        border-radius: 0.2rem;
+      }
+
+      .popCard .description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+      .description :nth-child(1) {
+        color: red;
+        font-weight: 600;
+      }
+      .description p {
+        font-weight: 600;
+      }
+
+      .footer {
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        margin-top: 5rem;
+      }
+
+      .footer p {
+        color: red;
+        font-size: 16px;
+        margin: 5px 0;
+      }
+
+      .footer a {
+        color: red;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+      .header a,
+.card a {
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.header img {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.header a:hover img {
+  transform: scale(1.08);
+  opacity: 0.9;
+}
+.cards{
+  border:none;
+}
+
+.card .thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;  
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.card:hover .thumb {
+  transform: scale(1.1); /* Zoom-in effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow when hovered */
+}
+
+.card .caption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  z-index: 1;
+  color: white;  /* Ensure text is visible */
+  font-size: 1.1em; /* Adjust font size as needed */
+  background: rgba(253, 253, 253, 0.5); /* Optional: background for better text visibility */
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.card-div .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.card-div .card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; /* Optional: Rounded borders for cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Card shadow */
+}
+
+
+
+
+      /* Responsive Styles */
+@media (max-width: 768px) {
+  .nav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .nav div {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav ul {
+    width: 100%;
+    padding: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+  }
+
+  .nav ul li {
+    margin: 0.5rem;
+  }
+
+  .nav input {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .nav button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .header {
+    flex-direction: column;
+    margin: 15rem auto 0 auto;
+    gap: 1rem;
+  }
+
+  .header a {
+    width: 100%;
+    height: auto;
+  }
+
+  .desc {
+    font-size: 0.8rem;
+    height: 30%;
+    padding: 0.4rem;
+  }
+
+  .card-div h2 {
+    margin-left: 0.5rem;
+  }
+
+  .cards {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card img {
+    width: 100%;
+  }
+
+  .Popcontent {
+    gap: 1rem;
+    margin-top: 4rem;
+  }
+
+  .Popcontent h2 {
+    margin-left: 0.5rem;
+  }
+
+  .popCard {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .popCard img {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 1rem;
+  }
+
+  .footer p {
+    font-size: 14px;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <!-- nav wala section -->
+    <div class="nav">
+      <div>
+        <img src="Images/cdnlogo.com_ign.svg" alt="IGN" />
+        <h2><span style="color: red">KDS</span></h2>
+      </div>
+
+      <ul>
+        <li>
+          <a href="index.html"><i class="ri-home-5-line"></i></a>
+        </li>
+        <li>
+          <a href="Review.html"><i class="ri-store-2-line"></i></a>
+        </li>
+        <li>
+          <a href="v.html"><i class="ri-file-video-line"></i></a>
+        </li>
+        <li>
+          <a href="news.html"><i class="ri-news-line"></i></a>
+        </li>
+        <li>
+          <a href="previews.html"><i class="ri-presentation-line"></i></a>
+        </li>
+        <li>
+          <a href="cup.html"><i class="ri-cup-line"></i></a>
+        </li>
+      </ul>
+      <input type="text" placeholder="Search..." />
+      <button>Login</button>
+    </div>
+
+    <!-- header wala section  -->
+    <div class="header">
+      <a
+        href="https://pk.ign.com/thunderbolts-the-movie/237436/news/thunderbolts-new-footage-revealed-the-sad-outcome-of-buckys-political-career"
+      >
+        <img
+          src="Images/thunderbolts-new-footage-revealed-the-sad-outcome-of-buckys_xmh8.800.webp"
+          alt=""
+        />
+        <div class="desc">
+          Thunderbolts: New Footage Revealed the Sad Outcome of Bucky’s
+          Political Career
+        </div>
+      </a>
+      <a
+        href="https://pk.ign.com/superman-james-gunn-reboot/237435/feature/that-robot-giggling-in-the-superman-sneak-peek-is-the-secret-to-james-gunns-success"
+      >
+        <img
+          src="Images/that-robot-giggling-in-the-superman-sneak-peek-is-the-secret_8csg.800.webp"
+          alt=""
+        />
+        <div class="desc">
+          That Robot Giggling in the Superman Sneak Peek Is the Secret to James
+          Gunn's Success
+        </div>
+      </a>
+      <a
+        href="https://pk.ign.com/the-running-man-edgar-wright/237437/news/the-first-footage-from-edgar-wrights-the-running-man-shows-how-hes-gone-back-to-stephen-kings-source"
+      >
+        <img
+          src="Images/the-first-footage-from-edgar-wrights-the-running-man-shows-h_crrh.800.webp"
+          alt=""
+        />
+        <div class="desc">
+          The First Footage From Edgar Wright’s The Running Man Shows How He’s
+          Gone Back to Stephen King’s Source Material
+        </div>
+      </a>
+      <a
+        href="https://pk.ign.com/tron-3/237433/news/tron-ares-footage-shows-the-digital-world-entering-the-real-world"
+      >
+        <img
+          src="Images/tron-ares-footage-shows-the-digital-world-entering-the-real_fp3p.800.webp"
+          alt=""
+        />
+        <div class="desc">
+          TRON: Ares Footage Shows the Digital World Entering the Real World
+        </div>
+      </a>
+    </div>
+
+    <main>
+      <!-- Spotlight section ka section -->
+<div class="card-div">
+  <h2><strong>Spotlight</strong></h2>
+  <div class="cards">
+    <div class="card NEWS p1">
+      <a
+        href="https://pk.ign.com/avatar-3/237439/news/disney-and-marvel-at-cinemacon-2025-the-biggest-moments"
+        class="thumb link"
+      >
+        <img
+          alt="Disney and Marvel at CinemaCon 2025: The Biggest Moments"
+          class="thumb"
+          src="https://sm.ign.com/t/ign_pk/news/d/disney-and/disney-and-marvel-at-cinemacon-2025-the-biggest-moments_1uzc.320.jpg"
+          srcset="
+            https://sm.ign.com/t/ign_pk/news/d/disney-and/disney-and-marvel-at-cinemacon-2025-the-biggest-moments_1uzc.320.jpg,
+            https://sm.ign.com/t/ign_pk/news/d/disney-and/disney-and-marvel-at-cinemacon-2025-the-biggest-moments_1uzc.640.jpg 2x
+          "
+        />
+      </a>
+      <h3 class="caption">
+        <a
+          class="link"
+          href="https://pk.ign.com/avatar-3/237439/news/disney-and-marvel-at-cinemacon-2025-the-biggest-moments"
+          >Disney and Marvel at CinemaCon 2025: The Biggest Moments</a
+        >
+      </h3>
+    </div>
+
+    <div class="card GALLERY p2">
+      <a
+        href="https://pk.ign.com/tron-3/237434/gallery/tron-ares-images"
+        class="thumb link"
+      >
+        <img
+          alt="TRON: Ares Images"
+          class="thumb"
+          src="https://sm.ign.com/t/ign_pk/gallery/t/tron-ares-/tron-ares-images_kvsh.320.jpg"
+          srcset="
+            https://sm.ign.com/t/ign_pk/gallery/t/tron-ares-/tron-ares-images_kvsh.320.jpg,
+            https://sm.ign.com/t/ign_pk/gallery/t/tron-ares-/tron-ares-images_kvsh.640.jpg 2x
+          "
+        />
+      </a>
+      <h3 class="caption">
+        <a
+          class="link"
+          href="https://pk.ign.com/tron-3/237434/gallery/tron-ares-images"
+          >TRON: Ares Images</a
+        >
+      </h3>
+    </div>
+
+    <div class="card NEWS p3">
+      <a
+        href="https://pk.ign.com/the-fantastic-four/237432/news/new-fantastic-four-footage-reveals-a-major-plot-point-and-the-female-silver-surfer"
+        class="thumb link"
+      >
+        <img
+          alt="New Fantastic Four Footage Reveals a Major Plot Point... and the Female Silver Surfer"
+          class="thumb"
+          src="https://sm.ign.com/t/ign_pk/news/n/new-fantas/new-fantastic-four-footage-reveals-a-major-plot-point-and-th_smbt.320.jpg"
+          srcset="
+            https://sm.ign.com/t/ign_pk/news/n/new-fantas/new-fantastic-four-footage-reveals-a-major-plot-point-and-th_smbt.320.jpg,
+            https://sm.ign.com/t/ign_pk/news/n/new-fantas/new-fantastic-four-footage-reveals-a-major-plot-point-and-th_smbt.640.jpg 2x
+          "
+        />
+      </a>
+      <h3 class="caption">
+        <a
+          class="link"
+          href="https://pk.ign.com/the-fantastic-four/237432/news/new-fantastic-four-footage-reveals-a-major-plot-point-and-the-female-silver-surfer"
+          >New Fantastic Four Footage Reveals a Major Plot Point... and the Female Silver Surfer</a
+        >
+      </h3>
+    </div>
+
+    <div class="card NEWS p4">
+      <a
+        href="https://pk.ign.com/avatar-3/237431/news/avatar-fire-and-ash-footage-introduced-new-navi-allies-and-adversaries"
+        class="thumb link"
+      >
+        <img
+          alt="Avatar: Fire and Ash Footage Introduced New Na'vi Allies and Adversaries"
+          class="thumb"
+          src="https://sm.ign.com/t/ign_pk/news/a/avatar-fir/avatar-fire-and-ash-footage-introduced-new-navi-allies-and-a_eaqq.320.jpg"
+          srcset="
+            https://sm.ign.com/t/ign_pk/news/a/avatar-fir/avatar-fire-and-ash-footage-introduced-new-navi-allies-and-a_eaqq.320.jpg,
+            https://sm.ign.com/t/ign_pk/news/a/avatar-fir/avatar-fire-and-ash-footage-introduced-new-navi-allies-and-a_eaqq.640.jpg 2x
+          "
+        />
+      </a>
+      <h3 class="caption">
+        <a
+          class="link"
+          href="https://pk.ign.com/avatar-3/237431/news/avatar-fire-and-ash-footage-introduced-new-navi-allies-and-adversaries"
+          >Avatar: Fire and Ash Footage Introduced New Na'vi Allies and Adversaries</a
+        >
+      </h3>
+    </div>
+
+    <div class="card GALLERY p2">
+      <a
+        href="https://pk.ign.com/tron-3/237434/gallery/tron-ares-images"
+        class="thumb link"
+      >
+        <img
+          alt="TRON: Ares Images"
+          class="thumb"
+          src="https://sm.ign.com/t/ign_pk/gallery/t/tron-ares-/tron-ares-images_kvsh.320.jpg"
+          srcset="
+            https://sm.ign.com/t/ign_pk/gallery/t/tron-ares-/tron-ares-images_kvsh.320.jpg,
+            https://sm.ign.com/t/ign_pk/gallery/t/tron-ares-/tron-ares-images_kvsh.640.jpg 2x
+          "
+        />
+      </a>
+      <h3 class="caption">
+        <a
+          class="link"
+          href="https://pk.ign.com/tron-3/237434/gallery/tron-ares-images"
+          >TRON: Ares Images</a
+        >
+      </h3>
+    </div>
+
+  </div>
+</div>
+
+
+      <!-- popular content wala section  -->
+      <div class="Popcontent">
+        <h2><strong>Popular Content</strong></h2>
+        <div class="popCard">
+          <a href=""></a>
+          <img
+            src="Images/popular/first-predator-badlands-trailer-shown-at-cinemacon_uan4.280.webp"
+            alt=""
+            style="
+    margin-left: -14px;" />
+          <div class="description">
+            <p>2 days, 13 hours Comment on this article!</p>
+            <p>First Predator: Badlands Trailer Shown at CinemaCon</p>
+            <p>What if the Predator was... a good guy?</p>
+          </div>
+        </div>
+        <hr />
+        <div class="popCard">
+          <img
+            src="Images/popular/how-to-watch-a-minecraft-movie-showtimes-and-streaming-detai_vxgs.280.webp"
+            alt=""
+          />
+          <div class="description">
+            <p>2 days, 13 hours Comment on this article!</p>
+            <p>
+              How to Watch A Minecraft Movie: Showtimes and Streaming Details
+            </p>
+            <p>Will you see it in theaters or wait?</p>
+          </div>
+        </div>
+        <hr />
+        <div class="popCard">
+          <img
+            src="Images/popular/lego-minecraft-sets-are-getting-big-discounts-as-the-new-min_sycp.280.webp"
+            alt=""
+          />
+          <div class="description">
+            <p>2 days, 16 hours Comment on this article!</p>
+            <p>
+              LEGO Minecraft Sets Are Getting Big Discounts as the New Minecraft
+              Movie Hits Theaters
+            </p>
+            <p>Amazon is discounting the plastic brick version of blocks.</p>
+          </div>
+        </div>
+        <hr />
+        <div class="popCard">
+          <img
+            src="Images/popular/you-can-play-as-the-moo-moo-meadows-cow-in-mario-kart-world_umkd.280.webp"
+            alt=""
+          />
+          <div class="description">
+            <p>2 days, 13 hours Comment on this article!</p>
+            <p>2 days, 16 hours Comment on this article!</p>
+            <p>And me. I'm also the Internet.</p>
+          </div>
+        </div>
+        <hr />
+        <div class="popCard">
+          <img
+            src="Images/popular/tom-cruise-honors-val-kilmer-before-revealing-new-mission-im_ntrm.280.webp"
+            alt=""
+          />
+          <div class="description">
+            <p>2 days, 17 hours Comment on this article!</p>
+            <p>
+              Tom Cruise Honors Val Kilmer Before Revealing New Mission:
+              Impossible - The Final Reckoning Trailer
+            </p>
+            <p>“We wish you well on your next journey.”</p>
+          </div>
+        </div>
+        <hr />
+      </div>
+
+      <div class="Popcontent">
+        <h2><strong>Latest</strong></h2>
+        <div class="popCard">
+          <img
+            src="Images/popular/nintendo-switch-2-direct-7-biggest-surprises_yzvv.280.webp"
+            alt=""
+          />
+          <div class="description">
+            <p>
+              1 day, 5 hours Ago - Get ready for the most unexpected reveals!
+            </p>
+            <p>Top Surprises from the Nintendo Switch 2 Direct</p>
+            <p>
+              What new features are coming to the Nintendo Switch 2? Find out
+              now!
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="popCard">
+          <img
+            src="Images/popular/how-to-watch-lazarus-the-original-anime-from-cowboy-bebop-cr_s5aq.280.webp"
+            alt=""
+          />
+          <div class="description">
+            <p>3 days, 8 hours Ago - Anime fans are buzzing about this one!</p>
+            <p>
+              How to Watch Lazarus: The Original Anime from the Creators of
+              Cowboy Bebop
+            </p>
+            <p>
+              Explore a futuristic world with this stunning anime masterpiece.
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="popCard">
+          <img
+            src="Images/popular/how-to-watch-the-march-madness-final-four-games-online-for-f_an94.280.webp"
+            alt=""
+          />
+          <div class="description">
+            <p>5 days, 3 hours Ago - Don’t miss the big games this season!</p>
+            <p>How to Watch the March Madness Final Four Games Online</p>
+            <p>
+              Catch all the action from the Final Four with these easy streaming
+              options.
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="popCard">
+          <img
+            src="Images/popular/how-to-cut-down-your-monthly-streaming-bill-in-2025-and-beyo_yb46.280.webp"
+            alt=""
+          />
+          <div class="description">
+            <p>
+              2 days, 4 hours Ago - Save money and still watch what you love!
+            </p>
+            <p>How to Slash Your Monthly Streaming Bills in 2025</p>
+            <p>
+              Discover simple strategies to cut down on your subscriptions
+              without sacrificing content.
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="popCard">
+          <img
+            src="Images/popular/10-ways-switch-2-is-better-than-switch_zxbg.280.webp"
+            alt=""
+          />
+          <div class="description">
+            <p>6 days, 2 hours Ago - The next level of gaming is here!</p>
+            <p>10 Reasons Why the Switch 2 is a Game-Changer</p>
+            <p>
+              From performance to exclusive games, here’s why the Switch 2
+              stands above the rest.
+            </p>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </main>
+
+    <!-- footer ka section -->
+    <div class="footer">
+      <p>&copy; 2025 My Website. All rights reserved.</p>
+      <p>
+        Follow us on: <a href="https://www.facebook.com/">Facebook</a> |
+        <a href="http://www.LinkedIn.com">LinkedIn</a> |
+        <a href="https://www.instagram.com/">Instagram</a>
+      </p>
+    </div>
+  </body>
+</html>

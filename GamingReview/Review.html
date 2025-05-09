@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Reviews</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "poppins", Roboto;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      hr {
+        border: none;
+        border-top: 0.1px solid #ccc;
+        width: 95%;
+      }
+
+      .nav {
+        height: 15%;
+        display: flex;
+        padding-left: 6rem;
+        padding-right: 4rem;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+        padding: 1rem;
+        width: 25%;
+      }
+      .nav i {
+        width: 3rem;
+        color: black;
+        text-decoration: none;
+        list-style-type: none;
+        font-size: 1.7rem;
+      }
+      .nav img {
+        width: 2rem;
+      }
+      .nav a {
+        text-decoration: none;
+      }
+
+      .nav input {
+        border: 1px solid #ccc;
+        outline: none;
+        padding: 8px 16px;
+        border-radius: 1.5rem;
+        font-weight: 600;
+        font-size: 1rem;
+        width: 40%;
+        background-color: #f9f9f9;
+        transition: all 0.3s ease;
+      }
+
+      .nav input:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        background-color: #fff;
+      }
+
+      .nav button {
+        padding: 5px 20px;
+        border: none;
+        border-radius: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+      }
+
+      .nav div {
+        display: flex;
+      }
+
+      .main {
+        /* background-color:teal; */
+        height: 70%;
+        width: 90%;
+        margin: 10rem auto 0 auto;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+      }
+
+      .left-section {
+        height: 100%;
+        /* background-color: red; */
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 1rem;
+      }
+
+      .left-section img {
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+        border-radius: 0.2rem;
+      }
+
+      .left-section h2 {
+        text-align: left;
+        font-size: 1.7rem;
+        padding-left: 1rem;
+      }
+
+      .left-section i {
+        font-size: 2rem;
+        padding-right: 0.5rem;
+        font-weight: 500;
+      }
+
+      .right-section {
+        /* background-color: blue; */
+        width: 50%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1.3rem;
+      }
+      .right-section i {
+        font-size: 2rem;
+        padding-right: 0.5rem;
+        font-weight: 500;
+      }
+
+      .desc {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .desc .review-number {
+        display: inline-block;
+        padding: 0.6rem 1.1rem;
+        border-radius: 2rem;
+        font-weight: 600;
+        background-color: black;
+        font-size: 1rem;
+        letter-spacing: 0.3px;
+        text-align: center;
+        min-width: 2.5rem;
+      }
+
+      .desc :nth-child(1) {
+        color: red;
+        font-weight: 700;
+      }
+      .desc p {
+        font-weight: 700;
+      }
+
+      .category {
+        background-color: #f9f9f9;
+        height: 25%;
+        width: 87%;
+        margin: 0.8rem auto 0 auto;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        /* border: 1px solid #ccc;
+        border-left: none;
+        border-right: none; */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+        border-radius: 0.5rem;
+      }
+
+      .catUpper {
+        width: 60%;
+        height: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 0.5rem;
+        
+      }
+
+      .catUpper i {
+        font-size: 2rem;
+        padding-right: 0.5rem;
+        font-weight: 500;
+        color: black;
+
+      }
+      .catUpper a{
+        text-decoration: none;
+        color: black;
+      }
+
+
+    
+      .filter-bar {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        /* background-color: #f9f9f9; */
+        padding: 1rem;
+        border-radius: 0.5rem;
+        /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+        font-family: sans-serif;
+      }
+
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 36px;
+        height: 20px;
+        margin-left: 0.5rem;
+      }
+
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 20px;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 14px;
+        width: 14px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+
+      input:checked + .slider {
+        background-color: #4caf50;
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(16px);
+      }
+
+      select {
+        padding: 4px 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+
+
+      .Popcontent {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 7rem;
+        cursor: pointer;
+        width:89%;
+        margin:6rem auto;
+      }
+      .Popcontent h2 {
+        margin-left: 1rem;
+      }
+      .popCard {
+        display: flex;
+        border-radius: 5px;
+        margin-left: 1rem;
+        gap: 1rem;
+      }
+
+      .popCard img {
+        width: 20%;
+        border-radius: 0.2rem;
+      }
+
+      .popCard .description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+      .description :nth-child(1) {
+        color: red;
+        font-weight: 600;
+      }
+      .description p {
+        font-weight: 600;
+      }
+
+
+      .footer {
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        margin-top: 5rem;
+      }
+
+      .footer p {
+        color: red;
+        font-size: 16px;
+        margin: 5px 0;
+      }
+
+      .footer a {
+        color: red;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+
+      @media (max-width: 1200px) {
+  .nav ul {
+    width: 35%;
+  }
+
+  .nav input {
+    width: 30%;
+  }
+
+  .main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-section, .right-section {
+    width: 100%;
+  }
+
+  .left-section img {
+    height: auto;
+  }
+
+  .catUpper {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .popCard img {
+    width: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-wrap: wrap;
+    padding: 1rem;
+    height: auto;
+  }
+
+  .nav div {
+    margin-bottom: 1rem;
+  }
+
+  .nav ul {
+    width: 100%;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+  }
+
+  .nav input {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .main {
+    margin: 9rem auto 0 auto;
+    padding: 1rem;
+  }
+
+  .category {
+    width: 100%;
+  }
+
+  .popCard {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .popCard img {
+    width: 90%;
+  }
+
+  .Popcontent {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav h2 {
+    font-size: 1.3rem;
+  }
+
+  .nav i {
+    font-size: 1.3rem;
+  }
+
+  .nav button {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+  }
+
+  .left-section h2,
+  .right-section h2,
+  .Popcontent h2 {
+    font-size: 1.3rem;
+  }
+
+  .desc p {
+    font-size: 0.9rem;
+  }
+
+  .desc .review-number {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .main {
+        margin: 12rem auto 0 auto;
+        padding: 1rem;
+    }
+}
+
+    </style>
+  </head>
+  <body>
+    <!-- navback wala component -->
+    <div class="nav">
+      <div>
+        <img src="Images/cdnlogo.com_ign.svg" alt="IGN" />
+        <h2><span style="color: red">KDS</span></h2>
+      </div>
+
+      <ul>
+        <li>
+          <a href="index.html"><i class="ri-home-5-line"></i></a>
+        </li>
+        <li>
+          <a href="Review.html"><i class="ri-store-2-line"></i></a>
+        </li>
+        <li>
+          <a href="v.html"><i class="ri-file-video-line"></i></a>
+        </li>
+        <li>
+          <a href="news.html"><i class="ri-news-line"></i></a>
+        </li>
+        <li>
+          <a href="previews.html"><i class="ri-presentation-line"></i></a>
+        </li>
+        <li>
+          <a href="cup.html"><i class="ri-cup-line"></i></a>
+        </li>
+      </ul>
+      <input type="text" placeholder="Search..." />
+      <button>Login</button>
+    </div>
+    <!-- main wala div  -->
+    <div class="main">
+      <div class="left-section">
+        <h2>
+          <strong><i class="ri-message-2-line"></i>Reviews</strong>
+        </h2>
+        <img
+          src="Images/Review page/daredevil-born-again-episodes-5-and-6-review_y5jq.768.webp"
+          alt=""
+        />
+      </div>
+      <div class="right-section">
+        <h2>
+          <strong><i class="ri-message-2-line"></i>Popular</strong>
+        </h2>
+        <hr />
+        <div class="desc">
+          <div class="desc-left">
+            <span class="review-number">1</span>
+          </div>
+          <div class="desc-right">
+            <p>1 week, 5 days</p>
+            <p>Daredevil: Born Again Episodes 5 and 6 Review</p>
+          </div>
+        </div>
+        <div class="desc">
+          <div class="desc-left">
+            <span class="review-number">2</span>
+          </div>
+          <div class="desc-right">
+            <p>2 week, 7 days</p>
+            <p>inZOI Early Access Review</p>
+          </div>
+        </div>
+        <div class="desc">
+          <div class="desc-left">
+            <span class="review-number">3</span>
+          </div>
+          <div class="desc-right">
+            <p>5 week, 6 days</p>
+            <p>The First Berserker: Khazan Review</p>
+          </div>
+        </div>
+        <div class="desc">
+          <div class="desc-left">
+            <span class="review-number">4</span>
+          </div>
+          <div class="desc-right">
+            <p>7 week, 5 days</p>
+            <p>South of Midnight Review</p>
+          </div>
+        </div>
+        <div class="desc">
+          <div class="desc-left">
+            <span class="review-number">5</span>
+          </div>
+          <div class="desc-right">
+            <p>4 week, 5 days</p>
+            <p>Devil May Cry Season 1 Review</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- category wala div  -->
+    <div class="category">
+        <div class="catUpper">
+            <a href="#"><i class="ri-corner-up-right-double-line"></i></a>
+            <a href="#"><i class="ri-gamepad-line"></i></a>
+            <a href="#"><i class="ri-movie-line"></i></a>
+            <a href="#"><i class="ri-tv-line"></i></a>
+            <a href="#"><i class="ri-emotion-laugh-line"></i></a>
+            <a href="#"><i class="ri-smartphone-line"></i></a>
+          </div>
+          
+      <div class="catLower">
+        <div class="filter-bar">
+          <label class="toggle-container">
+            <span>Review Scores</span>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+          </label>
+
+          <label>
+            Sort By
+            <select>
+              <option>Most Recent</option>
+              <option>Highest Rated</option>
+              <option>Lowest Rated</option>
+            </select>
+          </label>
+
+          <label>
+            Platform
+            <select>
+              <option>All</option>
+              <option>Windows</option>
+              <option>Mac</option>
+              <option>Linux</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="Popcontent">
+        <h2><strong>Popular Content</strong></h2>
+        <div class="popCard">
+          <a href=""></a>
+          <img
+            src="Images/popular/first-predator-badlands-trailer-shown-at-cinemacon_uan4.280.webp"
+            alt=""
+          />
+          <div class="description">
+            <p>2 days, 13 hours Comment on this article!</p>
+            <p>First Predator: Badlands Trailer Shown at CinemaCon</p>
+            <p>What if the Predator was... a good guy?</p>
+          </div>
+        </div>
+        <hr />
+        <div class="popCard">
+          <img
+            src="Images/popular/how-to-watch-a-minecraft-movie-showtimes-and-streaming-detai_vxgs.280.webp"
+            alt=""
+          />
+          <div class="description">
+            <p>2 days, 13 hours Comment on this article!</p>
+            <p>
+              How to Watch A Minecraft Movie: Showtimes and Streaming Details
+            </p>
+            <p>Will you see it in theaters or wait?</p>
+          </div>
+        </div>
+        <hr />
+        <div class="popCard">
+          <img
+            src="Images/popular/lego-minecraft-sets-are-getting-big-discounts-as-the-new-min_sycp.280.webp"
+            alt=""
+          />
+          <div class="description">
+            <p>2 days, 16 hours Comment on this article!</p>
+            <p>
+              LEGO Minecraft Sets Are Getting Big Discounts as the New Minecraft
+              Movie Hits Theaters
+            </p>
+            <p>Amazon is discounting the plastic brick version of blocks.</p>
+          </div>
+        </div>
+        <hr />
+        <div class="popCard">
+          <img
+            src="Images/popular/you-can-play-as-the-moo-moo-meadows-cow-in-mario-kart-world_umkd.280.webp"
+            alt=""
+          />
+          <div class="description">
+            <p>2 days, 13 hours Comment on this article!</p>
+            <p>2 days, 16 hours Comment on this article!</p>
+            <p>And me. I'm also the Internet.</p>
+          </div>
+        </div>
+        <hr />
+        <div class="popCard">
+          <img
+            src="Images/popular/tom-cruise-honors-val-kilmer-before-revealing-new-mission-im_ntrm.280.webp"
+            alt=""
+          />
+          <div class="description">
+            <p>2 days, 17 hours Comment on this article!</p>
+            <p>
+              Tom Cruise Honors Val Kilmer Before Revealing New Mission:
+              Impossible - The Final Reckoning Trailer
+            </p>
+            <p>“We wish you well on your next journey.”</p>
+          </div>
+        </div>
+        <hr />
+      </div>
+
+
+
+         <!-- footer ka section -->
+    <div class="footer">
+        <p>&copy; 2025 My Website. All rights reserved.</p>
+        <p>
+          Follow us on: <a href="https://www.facebook.com/">Facebook</a> |
+          <a href="http://www.LinkedIn.com">LinkedIn</a> |
+          <a href="https://www.instagram.com/">Instagram</a>
+        </p>
+      </div>
+  </body>
+</html>
