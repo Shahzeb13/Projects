@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins';
+            
+        }
+
+        html , body {
+            height: 100%;
+            width:100%
+        }
+
+
+        .header{
+            width:98%;
+            height:40%;
+            background-color: yellowgreen;
+            color:white;
+            margin:0 auto;
+            
+            box-shadow: 2px 2px 7px yellowgreen
+        }
+        .header >h1 {
+
+            text-align: center;
+            padding-top:4rem;
+            font-size: 3rem;
+            
+        }
+        .header >p{
+            text-align: center;
+            padding-top:1rem;
+        }
+       
+        .cards{
+            color:white;
+            width:85%;
+            margin: 0 auto;
+            display: flex;
+            gap:4rem;
+            margin-top:2rem
+        }
+
+        .card{
+            height:385px;
+            width:20%;
+            /* background-color: aqua; */
+            display:flex;
+            flex-direction:column;
+            justify-content: space-between;
+            align-items: center;
+            /* border:4px solid greenyellow; */
+            /* border-radius: 1rem; */
+            background-color: #cfcecb;
+            box-shadow: 2px 3px 7px rgb(1 ,1,1);
+        }
+
+
+
+        .card >img {
+            width:100%
+        }
+
+        .headings{
+            padding:1rem;
+            text-align:center;
+            
+        }
+
+        .headings>h2{
+            padding-top:2rem;
+            padding-bottom: 1rem;
+            color:whitesmoke;
+            font-size:1.5rem
+        }
+        .headings> p {
+            font-size: 0.95rem;
+        }
+
+
+
+
+        .hero{
+        width:95%;
+        height:60%;
+        /* background-color: yellow; */
+        margin : 4rem auto;
+        display:flex;
+        background-color: aliceblue;
+        border-radius:1rem;
+        margin-bottom:5rem
+        }
+
+
+        .right-section{
+            grid-column: 1/-1;
+            
+        }
+
+        .right-section{
+            width:50%;
+
+        }
+
+        .right-section >img{
+            width:100%;
+        }
+
+        .right-section {
+            display: flex;
+            flex-direction: column;
+            color:white;
+            padding:2rem;
+            text-align: center;
+            gap:1rem
+        }
+.ca     .right-section > p {
+            color:#cfcecb
+}
+        .right-section > h3{
+            color:yellowgreen
+        }
+        .right-section >h2{
+            color:gold
+        }
+        .right-section >button {
+            padding:0.5rem;
+            border:none;
+            color:white;
+            letter-spacing:0.1rem;
+            background-color:goldenrod;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <!-- header wala section -->
+     
+         <div class="header">
+        <h1>About our Farm</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem tempora cupiditate nihil provident eaque sit beatae quia hic? Culpa, laborum!</p>
+    </div>
+
+    <!-- cards wala section   -->
+        <div class="cards">
+            <div class="card">
+               <div class="headings">
+                    <h2>Nature</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. O ptio, corrupti.</p>
+            </div>
+                <img src="Images/nature.jpg" alt="">
+            </div>
+            <div class="card">
+                <div class="headings">
+                    <h2>Alaska</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, corrupti.</p>
+            </div>
+                <img src="Images/alaska.jpg" alt="">
+            </div>
+            <div class="card">
+                <div class="headings">
+                    <h2>Sunset</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, corrupti.</p>
+            </div>
+                
+                <img src="Images/4K Wallpapers 1 (52).jpg" alt="">
+            </div>
+            <div class="card">
+                <div class="headings">
+                    <h2>Jungle</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, corrupti.</p>
+            </div>
+                <img src="Images/jungle.jpg" alt="">
+            </div>
+        </div>
+    
+   
+
+        <div class="hero">
+            <div class = 'right-section'>
+                <img src="Images/Eagle.jpg" alt="">
+            </div>
+            
+            <div class = 'right-section'>
+                <h3>Farming</h3>
+                <h2>Happy Animals</h2>
+                <p style = 'color:#92918c'>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore tenetur officiis ut mollitia illo, amet voluptatem, similique, pariatur perspiciatis dolores autem! Tempora, provident corrupti! Quod accusamus voluptas, eligendi sunt et ut modi. Distinctio praesentium dicta debitis quaerat totam voluptatem fuga est iste eius sint, vel ab! Libero, dolorem. Aperiam, delectus!
+            </p>
+            <button>Learn More...</button>
+            </div>
+            
+        </div>
+  
+    
+</body>
+</html>
